@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>tugas 3 &#8212; My sample book</title>
+    <title>Matriks Invers &#8212; My sample book</title>
   
   
   
@@ -365,7 +365,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>tugas 3</h1>
+    <h1>Matriks Invers</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -375,19 +375,26 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-matriks-invers">pengertian matriks invers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-matriks-invers">sifat sifat matriks invers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-dengan-eliminasi-gaus-jordan">mencari invers dengan eliminasi gaus jordan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Matriks Invers</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-matriks-invers">Pengertian Matriks Invers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-matriks-invers">Sifat sifat matriks invers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-dengan-menggunakan-eliminasi-gaus-jordan">Mencari invers dengan menggunakan eliminasi gaus jordan</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-persamaan-linier-dengan-mmatriks-invers">solusi persamaan linier dengan mmatriks invers</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Pengertian Matriks Invers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Sifat sifat matriks invers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-dengan-menggunakan-eliminasi-gaus-jordan">Mencari invers dengan menggunakan eliminasi gaus jordan</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">solusi persamaan linier dengan mmatriks invers</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Matriks Invers</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">pengertian matriks invers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">sifat sifat matriks invers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-dengan-eliminasi-gaus-jordan">mencari invers dengan eliminasi gaus jordan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">solusi persamaan linier dengan mmatriks invers</a></li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -398,23 +405,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="tugas-3">
-<h1>tugas 3<a class="headerlink" href="#tugas-3" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="matriks-invers">
+<h1>Matriks Invers<a class="headerlink" href="#matriks-invers" title="Link to this heading">#</a></h1>
 <section id="pengertian-matriks-invers">
-<h2>pengertian matriks invers<a class="headerlink" href="#pengertian-matriks-invers" title="Link to this heading">#</a></h2>
-<section id="sifat-sifat-matriks-invers">
-<h3>sifat sifat matriks invers<a class="headerlink" href="#sifat-sifat-matriks-invers" title="Link to this heading">#</a></h3>
-</section>
-<section id="mencari-invers-dengan-eliminasi-gaus-jordan">
-<h3>mencari invers dengan eliminasi gaus jordan<a class="headerlink" href="#mencari-invers-dengan-eliminasi-gaus-jordan" title="Link to this heading">#</a></h3>
-</section>
-<section id="solusi-persamaan-linier-dengan-mmatriks-invers">
-<h3>solusi persamaan linier dengan mmatriks invers<a class="headerlink" href="#solusi-persamaan-linier-dengan-mmatriks-invers" title="Link to this heading">#</a></h3>
-<p>membuat soal persamaan linier dengan 6 variabel</p>
-</section>
-</section>
-<section id="id1">
-<h2>Pengertian Matriks Invers<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2>Pengertian Matriks Invers<a class="headerlink" href="#pengertian-matriks-invers" title="Link to this heading">#</a></h2>
 <p>Matriks invers adalah matriks yang ketika dikalikan dengan matriks asalnya menghasilkan matriks identitas. Diberikan matriks persegi $<span class="math notranslate nohighlight">\(A\)</span><span class="math notranslate nohighlight">\( dengan ordo \)</span><span class="math notranslate nohighlight">\( n \times n \)</span><span class="math notranslate nohighlight">\(, maka matriks invers, dilambangkan dengan \)</span><span class="math notranslate nohighlight">\( A^{-1} \)</span><span class="math notranslate nohighlight">\(, adalah matriks yang memenuhi persamaan \)</span><span class="math notranslate nohighlight">\( A \times A^{-1} = A^{-1} \times A = I \)</span><span class="math notranslate nohighlight">\(, di mana \( I \) adalah matriks identitas ordo \)</span><span class="math notranslate nohighlight">\( n \times n \)</span>$.</p>
 <p>Dalam konteks matematika, matriks invers memainkan peran penting dalam penyelesaian sistem persamaan linear, inversi transformasi linier, dan berbagai aplikasi lainnya. Matriks invers hanya dapat ditemukan untuk matriks persegi yang non-singular (determinannya tidak nol). Jika determinan matriks ( A ) adalah nol, maka matriks ( A ) tidak memiliki invers.</p>
 <p>Misalkan kita memiliki matriks <span class="math notranslate nohighlight">\(A\)</span> sebagai berikut:
@@ -428,8 +422,8 @@ $<span class="math notranslate nohighlight">\(\text{adj}(A) = \begin{bmatrix} 4 
 <p>Jadi, <span class="math notranslate nohighlight">\(A^{-1}\)</span> akan menjadi:
 $<span class="math notranslate nohighlight">\( A^{-1} = \frac{1}{5} \times \begin{bmatrix} 4 &amp; -3 \\ -1 &amp; 2 \end{bmatrix} = \begin{bmatrix} \frac{4}{5} &amp; -\frac{3}{5} \\ -\frac{1}{5} &amp; \frac{2}{5} \end{bmatrix} \)</span>$</p>
 <p>Ini adalah contoh matriks invers dari matriks <span class="math notranslate nohighlight">\(A\)</span> dan nilai determinannya adalah 5.</p>
-<section id="id2">
-<h3>Sifat sifat matriks invers<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<section id="sifat-sifat-matriks-invers">
+<h3>Sifat sifat matriks invers<a class="headerlink" href="#sifat-sifat-matriks-invers" title="Link to this heading">#</a></h3>
 <p>Matriks invers memiliki beberapa sifat penting yang perlu dipahami. Berikut adalah beberapa sifat utama matriks invers:</p>
 <ol class="arabic simple">
 <li><p><strong>Unik</strong>: Setiap matriks persegi yang tidak singular (determinannya tidak nol) memiliki satu invers yang unik. Artinya, jika sebuah matriks memiliki invers, maka inversnya adalah tunggal.</p></li>
@@ -517,8 +511,8 @@ $<span class="math notranslate nohighlight">\((A^T)^{-1} = (A^{-1})^T\)</span>$<
 </div>
 </div>
 </section>
-<section id="id3">
-<h3>solusi persamaan linier dengan mmatriks invers<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<section id="solusi-persamaan-linier-dengan-mmatriks-invers">
+<h3>solusi persamaan linier dengan mmatriks invers<a class="headerlink" href="#solusi-persamaan-linier-dengan-mmatriks-invers" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -552,6 +546,22 @@ $<span class="math notranslate nohighlight">\((A^T)^{-1} = (A^{-1})^T\)</span>$<
 </div>
 </div>
 </div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Matriks Invers<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<section id="id2">
+<h2>pengertian matriks invers<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h3>sifat sifat matriks invers<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+</section>
+<section id="mencari-invers-dengan-eliminasi-gaus-jordan">
+<h3>mencari invers dengan eliminasi gaus jordan<a class="headerlink" href="#mencari-invers-dengan-eliminasi-gaus-jordan" title="Link to this heading">#</a></h3>
+</section>
+<section id="id4">
+<h3>solusi persamaan linier dengan mmatriks invers<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>membuat soal persamaan linier dengan 6 variabel</p>
 </section>
 </section>
 </section>
@@ -611,19 +621,26 @@ $<span class="math notranslate nohighlight">\((A^T)^{-1} = (A^{-1})^T\)</span>$<
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-matriks-invers">pengertian matriks invers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-matriks-invers">sifat sifat matriks invers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-dengan-eliminasi-gaus-jordan">mencari invers dengan eliminasi gaus jordan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Matriks Invers</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-matriks-invers">Pengertian Matriks Invers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-matriks-invers">Sifat sifat matriks invers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-dengan-menggunakan-eliminasi-gaus-jordan">Mencari invers dengan menggunakan eliminasi gaus jordan</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-persamaan-linier-dengan-mmatriks-invers">solusi persamaan linier dengan mmatriks invers</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Pengertian Matriks Invers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Sifat sifat matriks invers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-dengan-menggunakan-eliminasi-gaus-jordan">Mencari invers dengan menggunakan eliminasi gaus jordan</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">solusi persamaan linier dengan mmatriks invers</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Matriks Invers</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">pengertian matriks invers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">sifat sifat matriks invers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-dengan-eliminasi-gaus-jordan">mencari invers dengan eliminasi gaus jordan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">solusi persamaan linier dengan mmatriks invers</a></li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
