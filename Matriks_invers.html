@@ -382,7 +382,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-matriks-invers">Pengertian Matriks Invers</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-matriks-invers">Sifat sifat matriks invers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-dengan-menggunakan-eliminasi-gaus-jordan">Mencari invers dengan menggunakan eliminasi gaus jordan</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-persamaan-linier-dengan-mmatriks-invers">solusi persamaan linier dengan mmatriks invers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-persamaan-linier-dengan-matriks-invers">solusi persamaan linier dengan matriks invers</a></li>
 </ul>
 </li>
 </ul>
@@ -391,7 +391,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">pengertian matriks invers</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">sifat sifat matriks invers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-dengan-eliminasi-gaus-jordan">mencari invers dengan eliminasi gaus jordan</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">solusi persamaan linier dengan mmatriks invers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-persamaan-linier-dengan-mmatriks-invers">solusi persamaan linier dengan mmatriks invers</a></li>
 </ul>
 </li>
 </ul>
@@ -496,8 +496,11 @@ $<span class="math notranslate nohighlight">\((A^T)^{-1} = (A^{-1})^T\)</span>$<
 
 <span class="c1"># Mencari matriks invers</span>
 <span class="n">invers_A</span> <span class="o">=</span> <span class="n">inverse_matrix</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks Invers menggunakan Eliminasi Gauss-Jordan:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">invers_A</span><span class="p">)</span>
+<span class="n">x</span><span class="o">=</span><span class="n">invers_A</span><span class="nd">@b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -509,13 +512,14 @@ $<span class="math notranslate nohighlight">\((A^T)^{-1} = (A^{-1})^T\)</span>$<
  [ 0.          0.          0.          0.125      -0.1125      0.        ]
  [ 0.          0.          0.          0.          0.1         0.        ]
  [ 0.          0.          0.          0.          0.          0.09090909]]
+[0. 0. 0. 0. 0. 0.]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="solusi-persamaan-linier-dengan-mmatriks-invers">
-<h3>solusi persamaan linier dengan mmatriks invers<a class="headerlink" href="#solusi-persamaan-linier-dengan-mmatriks-invers" title="Link to this heading">#</a></h3>
+<section id="solusi-persamaan-linier-dengan-matriks-invers">
+<h3>solusi persamaan linier dengan matriks invers<a class="headerlink" href="#solusi-persamaan-linier-dengan-matriks-invers" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -536,7 +540,6 @@ $<span class="math notranslate nohighlight">\((A^T)^{-1} = (A^{-1})^T\)</span>$<
 
 <span class="c1"># Mengalikan invers dari matriks koefisien A dengan vektor hasil B</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A_inv</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
-
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Solusi dari sistem persamaan linear:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 </pre></div>
@@ -562,8 +565,8 @@ $<span class="math notranslate nohighlight">\((A^T)^{-1} = (A^{-1})^T\)</span>$<
 <section id="mencari-invers-dengan-eliminasi-gaus-jordan">
 <h3>mencari invers dengan eliminasi gaus jordan<a class="headerlink" href="#mencari-invers-dengan-eliminasi-gaus-jordan" title="Link to this heading">#</a></h3>
 </section>
-<section id="id4">
-<h3>solusi persamaan linier dengan mmatriks invers<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<section id="solusi-persamaan-linier-dengan-mmatriks-invers">
+<h3>solusi persamaan linier dengan mmatriks invers<a class="headerlink" href="#solusi-persamaan-linier-dengan-mmatriks-invers" title="Link to this heading">#</a></h3>
 <p>membuat soal persamaan linier dengan 6 variabel</p>
 </section>
 </section>
@@ -628,7 +631,7 @@ $<span class="math notranslate nohighlight">\((A^T)^{-1} = (A^{-1})^T\)</span>$<
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-matriks-invers">Pengertian Matriks Invers</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-matriks-invers">Sifat sifat matriks invers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-dengan-menggunakan-eliminasi-gaus-jordan">Mencari invers dengan menggunakan eliminasi gaus jordan</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-persamaan-linier-dengan-mmatriks-invers">solusi persamaan linier dengan mmatriks invers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-persamaan-linier-dengan-matriks-invers">solusi persamaan linier dengan matriks invers</a></li>
 </ul>
 </li>
 </ul>
@@ -637,7 +640,7 @@ $<span class="math notranslate nohighlight">\((A^T)^{-1} = (A^{-1})^T\)</span>$<
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">pengertian matriks invers</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">sifat sifat matriks invers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-dengan-eliminasi-gaus-jordan">mencari invers dengan eliminasi gaus jordan</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">solusi persamaan linier dengan mmatriks invers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-persamaan-linier-dengan-mmatriks-invers">solusi persamaan linier dengan mmatriks invers</a></li>
 </ul>
 </li>
 </ul>
