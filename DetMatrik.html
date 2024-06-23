@@ -29,7 +29,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
@@ -46,7 +46,7 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -217,9 +217,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -360,9 +360,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -383,6 +383,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-determinan-matriks">Sifat sifat determinan matriks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-determinand-matriks-dan-invers-5x5">menghitung determinand matriks dan invers 5x5</a></li>
 </ul>
             </nav>
@@ -397,169 +398,370 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="sifatdet-matrik">
 <h1>SifatDet()Matrik<a class="headerlink" href="#sifatdet-matrik" title="Link to this heading">#</a></h1>
+<section id="sifat-sifat-determinan-matriks">
+<h2>Sifat sifat determinan matriks<a class="headerlink" href="#sifat-sifat-determinan-matriks" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Matriks Identitas
+$<span class="math notranslate nohighlight">\(
+A_{\text{identitas}} = \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 1
+\end{bmatrix}
+\)</span>$
+Maka determinand dari matriks identitas adalah 1</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
 <span class="n">n_array</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># matriks identitas</span>
-<span class="n">n_array8</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># matriks identita</span>
-<span class="n">n_array9</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span> <span class="c1"># matriks identita</span>
-<span class="n">n_array10</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># kolom sama</span>
-<span class="n">n_array11</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># baris sama</span>
-<span class="n">n_array12</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># baris sama</span>
-<span class="n">n_array13</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># baris sama</span>
-<span class="n">n_array16</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># baris sama</span>
-<span class="n">n_array17</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># baris sama</span>
-<span class="n">n_array18</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span> <span class="c1"># baris sama</span>
-<span class="n">n_array2</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1">#matriks identitas</span>
-<span class="n">n_array3</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
-<span class="n">n_array5</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span> <span class="c1"># matriks dengan baris yang merupakan kelipatan dari baris laiinya</span>
-<span class="n">n_array6</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span> <span class="c1"># matriks dengan kolom yang merupakan kelipatan dari kolom laiinya</span>
-<span class="n">n_array4</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span> <span class="c1"># merubah baris 2 dengan 3</span>
-<span class="n">n_array7</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span> <span class="c1"># merubah baris 2 dengan 3</span>
-<span class="n">n_array14</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># merubah baris 2 dengan 3</span>
-<span class="n">n_array15</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># merubah baris 2 dengan 3</span>
-
-<span class="c1"># Displaying the Matrix</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Numpy Matrix is:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">n_array</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">n_array2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">n_array3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">n_array4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">n_array5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">n_array6</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">n_array7</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">n_array8</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">n_array9</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">n_array10</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">n_array11</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">n_array12</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">n_array13</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">n_array13</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">n_array14</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">n_array15</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">n_array16</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">n_array17</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">n_array18</span><span class="p">)</span>
-<span class="c1"># calculating the determinant of matrix</span>
-<span class="n">det</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array</span><span class="p">)</span>
-<span class="n">det2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array2</span><span class="p">)</span>
-<span class="n">det3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array3</span><span class="p">)</span>
-<span class="n">det4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array4</span><span class="p">)</span>
-<span class="n">det5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array5</span><span class="p">)</span>
-<span class="n">det6</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array6</span><span class="p">)</span>
-<span class="n">det7</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array7</span><span class="p">)</span>
-<span class="n">det8</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array8</span><span class="p">)</span>
-<span class="n">det9</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array9</span><span class="p">)</span>
-<span class="n">det10</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array10</span><span class="p">)</span>
-<span class="n">det11</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array11</span><span class="p">)</span>
-<span class="n">det12</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array12</span><span class="p">)</span>
-<span class="n">det13</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array13</span><span class="p">)</span>
-<span class="n">det14</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array14</span><span class="p">)</span>
-<span class="n">det15</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array15</span><span class="p">)</span>
-<span class="n">det16</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array16</span><span class="p">)</span>
-<span class="n">det17</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array17</span><span class="p">)</span>
-<span class="n">det18</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array18</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Determinant of given 2X2 matrix:&quot;</span><span class="p">)</span>
-<span class="c1"># maatriks identitas dengan hasil determinannya adalah 1</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">det</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">det2</span><span class="p">))</span>
-<span class="c1"># matriks C</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">det3</span><span class="p">))</span>
-<span class="c1"># matriks c dengan merubah baris akan mengubah tanda dari determinan</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">det4</span><span class="p">))</span>
-<span class="c1"># jika suatu baris matrik adalah kelipatan dari baris laiinya maka hasilnya 0</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">det5</span><span class="p">))</span>
-<span class="c1"># jika suatu kolom matrik adalah kelipatan dari kolom laiinya maka hasilnya 0</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">det6</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">det7</span><span class="p">))</span>
-<span class="c1"># jika suatu matrik merupakan kelipatan dari matris lainnya maka determinand dari matrik tersebut adalah kelipatan pangkat ordo dari matrik tersebut dan di kalihkan dengan hasil determinand matrik kelipatannya</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">det8</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">det9</span><span class="p">))</span>
-<span class="c1"># jika suatu baris matrik merupakan keliapatan dari suatu baris mmatriks makan determinad dari suatu matriks adalah kelipatan dari matriks tersebut</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">det10</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">det11</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">det12</span><span class="p">))</span>
-<span class="c1"># jika suatu matris merupakan penjumlahan dari 2 matriks maka hasilnya akan di jumlahkan</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">det13</span><span class="p">)</span>
-<span class="c1"># jika suatu matriks membentuk segitiga atas dengan 0 di atas diagonal atas atau bawah maka determinandnya hasil perkalian diagonalnya</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">det14</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">det15</span><span class="p">)</span>
-<span class="c1"># jika dua matriks dikalikan maka hasil determinand dari matrik tersebut adalah hasil perkalian dari determinad matrik tersebut</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">det16</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">det17</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">det18</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;maatriks identitas dengan hasil determinannya adalah 1&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;det=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Numpy Matrix is:
-[[1 0]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 0]
  [0 1]]
-[[1 0 0]
- [0 1 0]
- [0 0 1]]
-[[1 2 1]
+maatriks identitas dengan hasil determinannya adalah 1
+det=1.0
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Matris Dengan menukar baris</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A= \begin{bmatrix}
+1 &amp; 2 &amp; 1 \\
+3 &amp; 1 &amp; 2 \\
+2 &amp; 1 &amp; 2
+\end{bmatrix}
+\end{split}\]</div>
+<p>Menukar baris 2 dan 3
+$<span class="math notranslate nohighlight">\(
+A_{\text{tukarbaris3dan2}}= \begin{bmatrix}
+1 &amp; 2 &amp; 1 \\
+2 &amp; 1 &amp; 2 \\
+3 &amp; 1 &amp; 2
+\end{bmatrix}
+\)</span>$</p>
+<p>Maka determinand dari matriks tersebut adalah 0</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_array3</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<span class="n">n_array4</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span> <span class="c1"># merubah baris 2 dengan 3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;maatriks c dengan mengubah baris menghasilkan determinan yang berubah tandanya&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;det=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array3</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;det=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array4</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 2 1]
  [3 1 2]
  [2 1 2]]
 [[1 2 1]
  [2 1 2]
  [3 1 2]]
-[[1 2 1]
+maatriks c dengan mengubah baris menghasilkan determinan yang berubah tandanya
+det=-3.000000000000001
+det=3.000000000000001
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Matrik dengan baris kelipatan baris lainnya dari matrik tesebut</p></li>
+</ol>
+<p>baris 2 kelipatan dari baris 1
+$<span class="math notranslate nohighlight">\(
+A= \begin{bmatrix}
+1 &amp; 2 &amp; 1 \\
+2 &amp; 4 &amp; 2 \\
+2 &amp; 1 &amp; 2
+\end{bmatrix}
+\)</span>$
+Maka determinand dari matriks tersebut adalah 0</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_array5</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span> <span class="c1"># matriks dengan baris yang merupakan kelipatan dari baris laiinya</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;jika matriks merupakan hasil kelipatan dari barir lainnya determinannya adalah 0&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;det=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array5</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 2 1]
  [2 4 2]
  [2 1 2]]
-[[1 2 1]
+jika matriks merupakan hasil kelipatan dari barir lainnya determinannya adalah 0
+det=0.0
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Matrik dengan kolom kelipatan kolom lainnya dari matrik tesebut</p></li>
+</ol>
+<p>kolom dengan angka 1,2,2 menghasilkan kelipatan 2,4,4
+$<span class="math notranslate nohighlight">\(
+A= \begin{bmatrix}
+1 &amp; 2 &amp; 1 \\
+2 &amp; 4 &amp; 2 \\
+2 &amp; 4 &amp; 3
+\end{bmatrix}
+\)</span>$
+Maka determinand dari matriks tersebut adalah 0</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_array6</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span> <span class="c1"># matriks dengan kolom yang merupakan kelipatan dari kolom laiinya</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;jika matriks merupakan hasil kelipatan dari kolom lainnya determinannya adalah 0&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;det=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array6</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 2 1]
  [2 4 2]
  [2 4 3]]
-[[6 2 4]
- [2 4 2]
- [4 2 4]]
-[[3 4]
+jika matriks merupakan hasil kelipatan dari kolom lainnya determinannya adalah 0
+det=0.0
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Matrik merupkan kelipatan dari matrik lainnya
+$<span class="math notranslate nohighlight">\(
+A= \begin{bmatrix}
+3 &amp; 4 \\
+2 &amp; 1
+\end{bmatrix}
+\)</span>$</p></li>
+</ol>
+<p>matrik B merupakan kelipatan dari matrik A
+$<span class="math notranslate nohighlight">\(
+b= \begin{bmatrix}
+6 &amp; 8 \\
+4 &amp; 2
+\end{bmatrix}
+\)</span>$
+maka determinan dari matrik tersebut adalah kelipatan dari matris lainnya maka determinand dari matrik tersebut adalah kelipatan pangkat ordo dari matrik tersebut dan di kalihkan dengan hasil determinand matrik kelipatannya</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#jika suatu matrik merupakan kelipatan dari matris lainnya maka determinand dari matrik tersebut adalah kelipatan pangkat ordo dari matrik tersebut dan di kalihkan dengan hasil determinand matrik kelipatannya</span>
+<span class="n">n_array8</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">n_array9</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array9</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;jika matriks merupakan hasil kelipatan dari matrik lainnta lainnya determinannya adalah 0&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;det=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array8</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;det=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array9</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3 4]
  [2 1]]
 [[6 8]
  [4 2]]
-[[6 4]
+jika matriks merupakan hasil kelipatan dari matrik lainnta lainnya determinannya adalah 0
+det=-5.000000000000001
+det=-19.999999999999996
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>baris matrik merupakan keliapatan dari suatu baris matriks</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A= \begin{bmatrix}
+6 &amp; 4 \\
+4 &amp; 1
+\end{bmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+B= \begin{bmatrix}
+6 &amp; 8 \\
+2 &amp; 1
+\end{bmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+C= \begin{bmatrix}
+4 &amp; 1 \\
+2 &amp; 1
+\end{bmatrix}
+\end{split}\]</div>
+<p>jika suatu baris matrik merupakan keliapatan dari suatu baris matriks makan determinad dari suatu matriks adalah kelipatan dari matriks tersebut’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_array10</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># kolom sama</span>
+<span class="n">n_array11</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># baris sama</span>
+<span class="n">n_array12</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># baris sama</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array11</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array12</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; jika suatu baris matrik merupakan keliapatan dari suatu baris matriks makan determinad dari suatu matriks adalah kelipatan dari matriks tersebut&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;det=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array10</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;det=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array11</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;det=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array12</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[6 4]
  [4 1]]
 [[6 8]
  [2 1]]
 [[4 1]
  [2 1]]
-[[7 5]
+ jika suatu baris matrik merupakan keliapatan dari suatu baris matriks makan determinad dari suatu matriks adalah kelipatan dari matriks tersebut
+det=-9.999999999999998
+det=-9.999999999999998
+det=2.0
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>matris merupakan penjumlahan dari 2 matriks</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A= \begin{bmatrix}
+7 &amp; 5 \\
+2 &amp; 1
+\end{bmatrix}
+\end{split}\]</div>
+<p>jika suatu matris merupakan penjumlahan dari 2 matriks maka hasilnya akan di jumlahkan</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_array13</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array13</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; jika suatu matris merupakan penjumlahan dari 2 matriks maka hasilnya akan di jumlahkan&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;det=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array13</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[7 5]
  [2 1]]
-[[7 5]
- [2 1]]
-[[1 3 2]
+ jika suatu matris merupakan penjumlahan dari 2 matriks maka hasilnya akan di jumlahkan
+det=-2.9999999999999982
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>jika suatu matriks membentuk segitiga atas dengan 0 di atas diagonal atas atau bawah
+Matriks A dengan segitiga diagonal atas
+$<span class="math notranslate nohighlight">\(
+A= \begin{bmatrix}
+1 &amp; 3 &amp; 2\\
+0 &amp; 2 &amp; 2\\
+0&amp; 0 &amp; 1
+\end{bmatrix}
+\)</span><span class="math notranslate nohighlight">\(
+Matriks B dengan segitiga diagonal bawah
+\)</span><span class="math notranslate nohighlight">\(
+B= \begin{bmatrix}
+2 &amp; 0 &amp; 0\\
+1 &amp; 3 &amp; 0\\
+2 &amp; 1 &amp; 2
+\end{bmatrix}
+\)</span>$</p></li>
+</ol>
+<p>jika suatu matriks membentuk segitiga atas dengan 0 di atas diagonal atas atau bawah maka determinandnya hasil perkalian diagonalnya</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># jika suatu matriks membentuk segitiga atas dengan 0 di atas diagonal atas atau bawah maka determinandnya hasil perkalian diagonalnya</span>
+<span class="n">n_array14</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># merubah baris 2 dengan 3</span>
+<span class="n">n_array15</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span> <span class="c1"># merubah baris 2 dengan 3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array14</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array15</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;jika suatu matriks membentuk segitiga atas dengan 0 di atas diagonal atas atau bawah maka determinandnya hasil perkalian diagonalnya&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;det=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array14</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;det=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array15</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 3 2]
  [0 2 2]
  [0 0 1]]
-[[1 0 0]
- [1 2 0]
- [1 2 1]]
-[[2 1]
+[[2 0 0]
+ [1 3 0]
+ [2 1 2]]
+jika suatu matriks membentuk segitiga atas dengan 0 di atas diagonal atas atau bawah maka determinandnya hasil perkalian diagonalnya
+det=2.0
+det=12.0
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="9">
+<li><p>baris matrik merupakan keliapatan dari suatu baris matriks</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A= \begin{bmatrix}
+2 &amp; 1 \\
+1 &amp; 1
+\end{bmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+B= \begin{bmatrix}
+1 &amp; 1 \\
+1 &amp; 1
+\end{bmatrix}
+\end{split}\]</div>
+<p>Hasil perkalian dari matriks A dan B
+$<span class="math notranslate nohighlight">\(
+C= \begin{bmatrix}
+3 &amp; 2 \\
+3 &amp; 2
+\end{bmatrix}
+\)</span>$</p>
+<p>jika dua matriks dikalikan maka hasil determinand dari matrik tersebut adalah hasil perkalian dari determinad matrik tersebut</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  jika dua matriks dikalikan maka hasil determinand dari matrik tersebut adalah hasil perkalian dari determinad matrik tersebut</span>
+<span class="n">n_array16</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># baris sama</span>
+<span class="n">n_array17</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># baris sama</span>
+<span class="n">n_array18</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span> <span class="c1"># baris sama</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array16</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array17</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array18</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; jika dua matriks dikalikan maka hasil determinand dari matrik tersebut adalah hasil perkalian dari determinad matrik tersebut&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;det=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array16</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;det=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array17</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;det=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array18</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[2 1]
  [1 1]]
 [[1 1]
  [1 1]]
 [[3 2]
  [3 2]]
-
-Determinant of given 2X2 matrix:
-1
-1
--3
-3
-0
-0
-24
--5
--19
--9
--9
-2
--2.9999999999999982
-2.0
-2.0
-1.0
-0.0
-0.0
+ jika dua matriks dikalikan maka hasil determinand dari matrik tersebut adalah hasil perkalian dari determinad matrik tersebut
+det=1.0
+det=0.0
+det=0.0
 </pre></div>
 </div>
 </div>
@@ -569,7 +771,6 @@ Determinant of given 2X2 matrix:
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">n_array</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">n_array</span><span class="p">)</span>
-<span class="n">a</span><span class="p">:</span>
 <span class="n">det</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array</span><span class="p">)</span>
 <span class="n">det1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">n_array</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">det</span><span class="p">)</span>
@@ -578,27 +779,34 @@ Determinant of given 2X2 matrix:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-2-31a1a4c5ed5e&gt;&quot;</span><span class="gt">, line </span><span class="mi">4</span>
-    <span class="n">a</span><span class="p">:</span>
-      <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3 1 3]
+ [2 1 2]
+ [4 2 1]]
+-2.9999999999999996
+[[ 1.         -1.66666667  0.33333333]
+ [-2.          3.         -0.        ]
+ [ 0.          0.66666667 -0.33333333]]
 </pre></div>
 </div>
 </div>
 </div>
+</section>
 <section id="menghitung-determinand-matriks-dan-invers-5x5">
 <h2>menghitung determinand matriks dan invers 5x5<a class="headerlink" href="#menghitung-determinand-matriks-dan-invers-5x5" title="Link to this heading">#</a></h2>
 <p>matrik x dengan ordo 5x5:</p>
-<p>\begin{align*}
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
 X&amp;=
 \begin{bmatrix}
-2&amp;3&amp;1&amp;1&amp;4\
-1&amp;2&amp;2&amp;3&amp;1\
-1&amp;2&amp;3&amp;4&amp;1\
-1&amp;1&amp;1&amp;2&amp;2\
+2&amp;3&amp;1&amp;1&amp;4\\
+1&amp;2&amp;2&amp;3&amp;1\\
+1&amp;2&amp;3&amp;4&amp;1\\
+1&amp;1&amp;1&amp;2&amp;2\\
 1&amp;3&amp;2&amp;1&amp;4
 \end{bmatrix}
-\end{align*}</p>
+\end{align*}
+\end{split}\]</div>
 <p>untuk menghitung invers kita mengunakan rumus:</p>
 <div class="math notranslate nohighlight">
 \[ A^{-1} = \frac{1}{\text{det}(A)} \times \text{adj}(A) \]</div>
@@ -809,6 +1017,177 @@ Hasil perkalian 0.16666666666666674 dengan
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n_array</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># matriks identitas</span>
+<span class="n">n_array8</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># matriks identita</span>
+<span class="n">n_array9</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span> <span class="c1"># matriks identita</span>
+<span class="n">n_array10</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># kolom sama</span>
+<span class="n">n_array11</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># baris sama</span>
+<span class="n">n_array12</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># baris sama</span>
+<span class="n">n_array13</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># baris sama</span>
+<span class="n">n_array16</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># baris sama</span>
+<span class="n">n_array17</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># baris sama</span>
+<span class="n">n_array18</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span> <span class="c1"># baris sama</span>
+<span class="n">n_array2</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1">#matriks identitas</span>
+<span class="n">n_array3</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<span class="n">n_array5</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span> <span class="c1"># matriks dengan baris yang merupakan kelipatan dari baris laiinya</span>
+<span class="n">n_array6</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span> <span class="c1"># matriks dengan kolom yang merupakan kelipatan dari kolom laiinya</span>
+<span class="n">n_array4</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span> <span class="c1"># merubah baris 2 dengan 3</span>
+<span class="n">n_array7</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span> <span class="c1"># merubah baris 2 dengan 3</span>
+<span class="n">n_array14</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># merubah baris 2 dengan 3</span>
+<span class="n">n_array15</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="c1"># merubah baris 2 dengan 3</span>
+
+<span class="c1"># Displaying the Matrix</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Numpy Matrix is:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array9</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array11</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array12</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array13</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array13</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array14</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array15</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array16</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array17</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_array18</span><span class="p">)</span>
+<span class="c1"># calculating the determinant of matrix</span>
+<span class="n">det</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array</span><span class="p">)</span>
+<span class="n">det2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array2</span><span class="p">)</span>
+<span class="n">det3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array3</span><span class="p">)</span>
+<span class="n">det4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array4</span><span class="p">)</span>
+<span class="n">det5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array5</span><span class="p">)</span>
+<span class="n">det6</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array6</span><span class="p">)</span>
+<span class="n">det7</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array7</span><span class="p">)</span>
+<span class="n">det8</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array8</span><span class="p">)</span>
+<span class="n">det9</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array9</span><span class="p">)</span>
+<span class="n">det10</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array10</span><span class="p">)</span>
+<span class="n">det11</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array11</span><span class="p">)</span>
+<span class="n">det12</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array12</span><span class="p">)</span>
+<span class="n">det13</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array13</span><span class="p">)</span>
+<span class="n">det14</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array14</span><span class="p">)</span>
+<span class="n">det15</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array15</span><span class="p">)</span>
+<span class="n">det16</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array16</span><span class="p">)</span>
+<span class="n">det17</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array17</span><span class="p">)</span>
+<span class="n">det18</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">n_array18</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Determinant of given 2X2 matrix:&quot;</span><span class="p">)</span>
+<span class="c1"># maatriks identitas dengan hasil determinannya adalah 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">det</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">det2</span><span class="p">))</span>
+<span class="c1"># matriks C</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">det3</span><span class="p">))</span>
+<span class="c1"># matriks c dengan merubah baris akan mengubah tanda dari determinan</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">det4</span><span class="p">))</span>
+<span class="c1"># jika suatu baris matrik adalah kelipatan dari baris laiinya maka hasilnya 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">det5</span><span class="p">))</span>
+<span class="c1"># jika suatu kolom matrik adalah kelipatan dari kolom laiinya maka hasilnya 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">det6</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">det7</span><span class="p">))</span>
+<span class="c1"># jika suatu matrik merupakan kelipatan dari matris lainnya maka determinand dari matrik tersebut adalah kelipatan pangkat ordo dari matrik tersebut dan di kalihkan dengan hasil determinand matrik kelipatannya</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">det8</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">det9</span><span class="p">))</span>
+<span class="c1"># jika suatu baris matrik merupakan keliapatan dari suatu baris mmatriks maka determinad dari suatu matriks adalah kelipatan dari matriks tersebut</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">det10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">det11</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">det12</span><span class="p">))</span>
+<span class="c1"># jika suatu matris merupakan penjumlahan dari 2 matriks maka hasilnya akan di jumlahkan</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">det13</span><span class="p">)</span>
+<span class="c1"># jika suatu matriks membentuk segitiga atas dengan 0 di atas diagonal atas atau bawah maka determinandnya hasil perkalian diagonalnya</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">det14</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">det15</span><span class="p">)</span>
+<span class="c1"># jika dua matriks dikalikan maka hasil determinand dari matrik tersebut adalah hasil perkalian dari determinad matrik tersebut</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">det16</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">det17</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">det18</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Numpy Matrix is:
+[[1 0]
+ [0 1]]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 0 0]
+ [0 1 0]
+ [0 0 1]]
+[[1 2 1]
+ [3 1 2]
+ [2 1 2]]
+[[1 2 1]
+ [2 1 2]
+ [3 1 2]]
+[[1 2 1]
+ [2 4 2]
+ [2 1 2]]
+[[1 2 1]
+ [2 4 2]
+ [2 4 3]]
+[[6 2 4]
+ [2 4 2]
+ [4 2 4]]
+[[3 4]
+ [2 1]]
+[[6 8]
+ [4 2]]
+[[6 4]
+ [4 1]]
+[[6 8]
+ [2 1]]
+[[4 1]
+ [2 1]]
+[[7 5]
+ [2 1]]
+[[7 5]
+ [2 1]]
+[[1 3 2]
+ [0 2 2]
+ [0 0 1]]
+[[1 0 0]
+ [1 2 0]
+ [1 2 1]]
+[[2 1]
+ [1 1]]
+[[1 1]
+ [1 1]]
+[[3 2]
+ [3 2]]
+
+Determinant of given 2X2 matrix:
+1
+1
+-3
+3
+0
+0
+24
+-5
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-19
+-9
+-9
+2
+-2.9999999999999982
+2.0
+2.0
+1.0
+0.0
+0.0
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -876,6 +1255,7 @@ Hasil perkalian 0.16666666666666674 dengan
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-determinan-matriks">Sifat sifat determinan matriks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-determinand-matriks-dan-invers-5x5">menghitung determinand matriks dan invers 5x5</a></li>
 </ul>
   </nav></div>

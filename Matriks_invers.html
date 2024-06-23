@@ -29,7 +29,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
@@ -46,7 +46,7 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -217,9 +217,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -360,9 +360,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -420,15 +420,25 @@ document.write(`
 <p>Matriks invers adalah matriks yang ketika dikalikan dengan matriks asalnya menghasilkan matriks identitas. Diberikan matriks persegi $<span class="math notranslate nohighlight">\(A\)</span><span class="math notranslate nohighlight">\( dengan ordo \)</span><span class="math notranslate nohighlight">\( n \times n \)</span><span class="math notranslate nohighlight">\(, maka matriks invers, dilambangkan dengan \)</span><span class="math notranslate nohighlight">\( A^{-1} \)</span><span class="math notranslate nohighlight">\(, adalah matriks yang memenuhi persamaan \)</span><span class="math notranslate nohighlight">\( A \times A^{-1} = A^{-1} \times A = I \)</span><span class="math notranslate nohighlight">\(, di mana \( I \) adalah matriks identitas ordo \)</span><span class="math notranslate nohighlight">\( n \times n \)</span>$.</p>
 <p>Dalam konteks matematika, matriks invers memainkan peran penting dalam penyelesaian sistem persamaan linear, inversi transformasi linier, dan berbagai aplikasi lainnya. Matriks invers hanya dapat ditemukan untuk matriks persegi yang non-singular (determinannya tidak nol). Jika determinan matriks ( A ) adalah nol, maka matriks ( A ) tidak memiliki invers.</p>
 <p>Misalkan kita memiliki matriks <span class="math notranslate nohighlight">\(A\)</span> sebagai berikut:
-\ A = \begin{bmatrix} 2 &amp; 3 \ 1 &amp; 4 \end{bmatrix} \</p>
+$<span class="math notranslate nohighlight">\(
+\ A = \begin{bmatrix} 2 &amp; 3 \\ 1 &amp; 4 \end{bmatrix}\
+\)</span>$</p>
 <p>Untuk menghitung determinan, kita menggunakan rumus:
-$<span class="math notranslate nohighlight">\( \text{det}(A) = (2 \times 4) - (3 \times 1) = 8 - 3 = 5 \)</span>$</p>
+$<span class="math notranslate nohighlight">\(
+\text{det}(A) = (2 \times 4) - (3 \times 1) = 8 - 3 = 5
+\)</span>$</p>
 <p>Sekarang, untuk mencari invers dari matriks <span class="math notranslate nohighlight">\(A\)</span>, kita gunakan rumus:
-$<span class="math notranslate nohighlight">\( A^{-1} = \frac{1}{\text{det}(A)} \times \text{adj}(A) \)</span>$</p>
+$<span class="math notranslate nohighlight">\(
+A^{-1} = \frac{1}{\text{det}(A)} \times \text{adj}(A)
+\)</span>$</p>
 <p>Di mana <span class="math notranslate nohighlight">\(\text{adj}(A)\)</span> adalah matriks adjoin dari <span class="math notranslate nohighlight">\(A\)</span>:
-$<span class="math notranslate nohighlight">\(\text{adj}(A) = \begin{bmatrix} 4 &amp; -3 \\ -1 &amp; 2 \end{bmatrix}\)</span>$</p>
+$<span class="math notranslate nohighlight">\(
+\text{adj}(A) = \begin{bmatrix} 4 &amp; -3 \\ -1 &amp; 2 \end{bmatrix}
+\)</span>$</p>
 <p>Jadi, <span class="math notranslate nohighlight">\(A^{-1}\)</span> akan menjadi:
-$<span class="math notranslate nohighlight">\( A^{-1} = \frac{1}{5} \times \begin{bmatrix} 4 &amp; -3 \\ -1 &amp; 2 \end{bmatrix} = \begin{bmatrix} \frac{4}{5} &amp; -\frac{3}{5} \\ -\frac{1}{5} &amp; \frac{2}{5} \end{bmatrix} \)</span>$</p>
+$<span class="math notranslate nohighlight">\(
+A^{-1} = \frac{1}{5} \times \begin{bmatrix} 4 &amp; -3 \\ -1 &amp; 2 \end{bmatrix} = \begin{bmatrix} \frac{4}{5} &amp; -\frac{3}{5} \\ -\frac{1}{5} &amp; \frac{2}{5} \end{bmatrix}
+\)</span>$</p>
 <p>Ini adalah contoh matriks invers dari matriks <span class="math notranslate nohighlight">\(A\)</span> dan nilai determinannya adalah 5.</p>
 <section id="sifat-sifat-matriks-invers">
 <h3>Sifat sifat matriks invers<a class="headerlink" href="#sifat-sifat-matriks-invers" title="Link to this heading">#</a></h3>
@@ -436,16 +446,26 @@ $<span class="math notranslate nohighlight">\( A^{-1} = \frac{1}{5} \times \begi
 <ol class="arabic simple">
 <li><p><strong>Unik</strong>: Setiap matriks persegi yang tidak singular (determinannya tidak nol) memiliki satu invers yang unik. Artinya, jika sebuah matriks memiliki invers, maka inversnya adalah tunggal.</p></li>
 <li><p><strong>Distributif</strong>: Matriks invers memiliki sifat distributif terhadap perkalian, yaitu jika ( A ), ( B ), dan ( C ) adalah matriks persegi yang sesuai ukuran, dan ( A ) memiliki invers, maka:
-$<span class="math notranslate nohighlight">\(A(B + C) = AB + AC\)</span><span class="math notranslate nohighlight">\(
+$<span class="math notranslate nohighlight">\(
+A(B + C) = AB + AC
+\)</span><span class="math notranslate nohighlight">\(
 dan
-\)</span><span class="math notranslate nohighlight">\((B + C)A = BA + CA\)</span>$</p></li>
+\)</span><span class="math notranslate nohighlight">\(
+(B + C)A = BA + CA
+\)</span>$</p></li>
 <li><p><strong>Asosiatif</strong>: Matriks invers juga mematuhi sifat asosiatif terhadap perkalian, yaitu jika ( A ), ( B ), dan ( C ) adalah matriks persegi yang sesuai ukuran, dan ( A ) memiliki invers, maka:
-$<span class="math notranslate nohighlight">\(A(BC) = (AB)C\)</span>$</p></li>
+$<span class="math notranslate nohighlight">\(
+A(BC) = (AB)C
+\)</span>$</p></li>
 <li><p><strong>Identitas</strong>: Produk matriks dengan inversnya menghasilkan matriks identitas, yaitu jika ( A ) adalah matriks persegi yang sesuai ukuran dan memiliki invers, maka:
-$<span class="math notranslate nohighlight">\(A \cdot A^{-1} = A^{-1} \cdot A = I\)</span>$
+$<span class="math notranslate nohighlight">\(
+A \cdot A^{-1} = A^{-1} \cdot A = I
+\)</span>$
 di mana ( I ) adalah matriks identitas.</p></li>
 <li><p><strong>Transpos</strong>: Matriks invers dari matriks transpos adalah transpos dari matriks invers, yaitu jika ( A ) adalah matriks persegi yang sesuai ukuran dan memiliki invers, maka:
-$<span class="math notranslate nohighlight">\((A^T)^{-1} = (A^{-1})^T\)</span>$</p></li>
+$<span class="math notranslate nohighlight">\(
+(A^T)^{-1} = (A^{-1})^T
+\)</span>$</p></li>
 </ol>
 <p>Sifat-sifat ini sangat penting dalam penggunaan matriks invers dalam berbagai aplikasi matematika dan ilmu terkait seperti aljabar linear, pemrosesan sinyal, dan pengolahan gambar.</p>
 </section>
